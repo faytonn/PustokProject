@@ -1,0 +1,11 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Query;
+global using Microsoft.Extensions.Configuration;
+global using Pustok.DAL.DataContext.Configurations;
+global using Pustok.DAL.DataContext.Entities;
+global using Pustok.DAL.DataContext.Entities.Base;
+global using Pustok.DAL.DataContext.Paging;
+global using Pustok.DAL.DataContext.Repositories.Abstraction;
+global using Pustok.DAL.DataContext.Repositories.Abstraction.Generic;
+global using Pustok.DAL.DataContext.Repositories.Implementation.Generic;
+global using System.Linq.Expressions;
