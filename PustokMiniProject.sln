@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PustokMiniProject", "Pustok
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pustok.DAL", "Pustok.DAL\Pustok.DAL.csproj", "{1654C0AB-BFC5-4672-83D4-90E71617F0B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pustok.BLL", "Pustok.BLL\Pustok.BLL.csproj", "{53E07B8C-7890-49C1-A65C-42F9E8815C58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1654C0AB-BFC5-4672-83D4-90E71617F0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1654C0AB-BFC5-4672-83D4-90E71617F0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1654C0AB-BFC5-4672-83D4-90E71617F0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E07B8C-7890-49C1-A65C-42F9E8815C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E07B8C-7890-49C1-A65C-42F9E8815C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E07B8C-7890-49C1-A65C-42F9E8815C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E07B8C-7890-49C1-A65C-42F9E8815C58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
