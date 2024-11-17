@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Pustok.BLL.ViewModels;
 
-namespace Pustok.BLL.Services.Abstractions
+namespace Pustok.BLL.Services.Abstractions;
+
+public interface IAttendanceService
 {
-    internal interface IAttendanceService
-    {
-    }
+    Task<List<AttendanceViewModel>> GetAllAttendancesAsync();
+    Task<AttendanceViewModel> CreateAttendanceAsync(CreateAttendanceViewModel model);
+    Task<AttendanceViewModel> UpdateAttendanceAsync(int id, UpdateAttendanceViewModel model);
+    Task<AttendanceViewModel> DeleteAttendanceAsync(int id);
 }

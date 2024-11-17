@@ -40,6 +40,7 @@ public class CreateProductViewModel : IViewModel
     public List<SelectListItem>? Categories { get; set; } = new List<SelectListItem>();
     public List<int>? CategoryIds { get; set; }
     public List<IFormFile>? Images { get; set; } = new List<IFormFile>();
+    public List<string> ImageUrls { get; set; } = new List<string>();
     public List<SelectListItem>? ProductTags { get; set; }
     public List<int> ProductTagIds { get; set; } = new List<int>();
 }
@@ -63,6 +64,7 @@ public class UpdateProductViewModel : IViewModel
     public List<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
     public List<int>? CategoryIds { get; set; }
     public List<IFormFile> Images { get; set; } = new List<IFormFile>();
+    public List<string> ImageUrls { get; set; } = new List<string>();
     public List<SelectListItem> ProductTags { get; set; } = new List<SelectListItem>();
     public List<int> ProductTagIds { get; set; } = new List<int>();
 

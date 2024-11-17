@@ -19,3 +19,8 @@ public class UpdateSubscribeViewModel : IViewModel
     public string? Email { set; get; }
     public bool ConfirmedEmail { get; set;} = false;
 }
+
+public class SubscribeListViewModel :PageableViewModel, IViewModel
+{
+    public List<SubscribeViewModel> Items = [];
+}

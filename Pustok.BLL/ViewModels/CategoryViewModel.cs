@@ -15,7 +15,7 @@ public class CreateCategoryViewModel : IViewModel
 {
     public string? Name { get; set; }
     public int? ParentId { get; set; }
-    public List<SelectListItem> AvailableParents { get; set; } = new List<SelectListItem>();
+    public List<CategoryViewModel> ParentCategories { get; set; } = new List<CategoryViewModel>();
 }
 
 public class UpdateCategoryViewModel : IViewModel
@@ -23,7 +23,7 @@ public class UpdateCategoryViewModel : IViewModel
     public int Id { get; set; }
     public string? Name { get; set; } 
     public int? ParentId { get; set; }
-    public List<SelectListItem> AvailableParents { get; set; } = new List<SelectListItem>();
+    public List<CategoryViewModel> ParentCategories { get; set; } = new List<CategoryViewModel>();
 }
 
 

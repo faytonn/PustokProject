@@ -29,7 +29,7 @@ public class UpdateSliderViewModel : IViewModel
     public decimal? DiscountPrice { get; set; }
 }
 
-public class SliderListViewModel : IViewModel
+public class SliderListViewModel : PageableViewModel, IViewModel
 {
     public List<SliderViewModel> Items = new List<SliderViewModel>();
 }

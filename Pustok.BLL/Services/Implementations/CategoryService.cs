@@ -118,5 +118,27 @@ public class CategoryService : ICategoryService
         return _mapper.Map<List<CategoryViewModel>>(list);
     }
 
+    public async Task<CategoryViewModel> RemoveAndOrphanChildCategories(int id)
+    {
+        var category = await _categoryRepository.GetAsync(id);
+
+        var childCategories = await GetChildCategoriesAsync(id);
+
+        if(childCategories != null)
+        {
+            var childCategoryVMs = _mapper.Map<List<Category>>(childCategories);
+
+            foreach(var childCategory in childCategoryVMs)
+            {
+                childCategory.ParentId = null;
+
+                await _categoryRepository.UpdateAsync(childCategory);
+            }
+        }
+
+        var deletedCategory = await _categoryRepository.DeleteAsync(category);
+
+        return _mapper.Map<CategoryViewModel>(deletedCategory);
+    }
 
 }

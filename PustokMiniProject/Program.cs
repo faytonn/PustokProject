@@ -1,5 +1,6 @@
 using Pustok.DAL;
 using Pustok.DAL.DataContext.ServiceRegistrations;
+using Pustok.BLL.ServiceRegistrations;
 
 namespace PustokMiniProject;
 
@@ -14,6 +15,7 @@ public class Program
 
         builder.Services.AddDataAccessServices(builder.Configuration);
 
+        builder.Services.AddBusinessLogicServices(builder.Configuration);
 
 
         var app = builder.Build();

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using CloudinaryDotNet;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using Pustok.BLL.Helpers.Abstractions;
 using Pustok.BLL.Services.Abstractions;
 using Pustok.BLL.ViewModels;
 using Pustok.DAL.DataContext.Entities;
@@ -11,11 +13,15 @@ public class ProductService : IProductService
 {
     private readonly IRepository<Product> _productRepository;
     private readonly IMapper _mapper;
+    private readonly ICloudinary _cloudinary;
+    private readonly ICloudinaryService _cloudinaryService;
 
-    public ProductService(IRepository<Product> productRepository, IMapper mapper)
+    public ProductService(IRepository<Product> productRepository, IMapper mapper, ICloudinary cloudinary, ICloudinaryService cloudinaryService)
     {
         _productRepository = productRepository;
         _mapper = mapper;
+        _cloudinary = cloudinary;
+        _cloudinaryService = cloudinaryService;
     }
 
     public async Task<ProductViewModel> CreateProductAsync(CreateProductViewModel vm)
@@ -139,4 +145,11 @@ public class ProductService : IProductService
         include: q => q.Include(p => p.Category),
         orderBy: q => q.OrderBy(p => p.DiscountPrice));
     }
+
+    public async Task<string> UploadImageAsync(IFormFile image)
+    {
+        var imageUrl = await _cloudinaryService.FileCreateAsync(image);
+        return imageUrl;
+    }
+
 }

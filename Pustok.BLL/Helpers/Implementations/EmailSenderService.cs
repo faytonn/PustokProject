@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Pustok.BLL.Services.Abstractions;
+using Pustok.BLL.Helpers.Abstractions;
 using System.Net;
 using System.Net.Mail;
 
-namespace Pustok.BLL.Services.Implementations;
+namespace Pustok.BLL.Helpers.Implementations;
 
 public class EmailSenderService : IEmailSender
 {

@@ -19,3 +19,8 @@ public class UpdateSettingViewModel : IViewModel
     public required string Key { get; set; }
     public required string Value { get; set; }
 }
+
+public class SettingListViewModel : PageableViewModel, IViewModel
+{
+    public List<SettingViewModel> Items { get; set; } = [];
+}

@@ -21,5 +21,8 @@ namespace Pustok.BLL.Services.Abstractions
         Task<ProductListViewModel> GetProductsByTagAsync(int tagId);
         Task<ProductListViewModel> GetFeaturedProductsAsync();
         Task<ProductListViewModel> GetDiscountedProductsAsync();
+
+        Task<string> UploadImageAsync(IFormFile image);
+
     }
 }

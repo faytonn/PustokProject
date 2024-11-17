@@ -1,0 +1,95 @@
+﻿@using Pustok.BLL.ViewModels
+@model CreateProductViewModel
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create Product</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All">
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="name">
+                </div>
+
+                <div class="form-group">
+                    <label>Brand</label>
+                    <input asp-for="Brand" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Product Code</label>
+                    <input asp-for="Code" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <input asp-for="Description" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Original Price</label>
+                    <input asp-for="MainPrice" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Discount Price</label>
+                    <input asp-for="DiscountPrice" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Stock Quantity</label>
+                    <input asp-for="StockAmount" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Reward Points</label>
+                    <input asp-for="RewardPoints" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Rating</label>
+                    <input asp-for="Rating" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>In Stock?</label>
+                    <input asp-for="InStock" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Categories</label>
+                    <select asp-items="Model.Categories" asp-for="CategoryIds" class="form-control" placeholder="Category">
+
+                        <option value="" disabled selected>Select a category</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tags</label>
+                    <select asp-items="Model.Tags" asp-for="TagIds" class="form-control" placeholder="Tag">
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Main Image</label>
+                    <input asp-for="MainImage" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Hover Image</label>
+                    <input asp-for="HoverImage" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Additional Images</label>
+                    <input asp-for="AdditionalImages" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Create</button>
+                <a asp-controller="product" asp-action="index" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

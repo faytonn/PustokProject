@@ -1,4 +1,4 @@
-﻿namespace Pustok.BLL.Services.Abstractions;
+﻿namespace Pustok.BLL.Helpers.Abstractions;
 
 public interface IEmailSender
 {
