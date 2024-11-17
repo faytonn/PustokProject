@@ -26,7 +26,8 @@ public class UpdateCategoryViewModel : IViewModel
     public List<SelectListItem> AvailableParents { get; set; } = new List<SelectListItem>();
 }
 
-public class CategoryListViewModel : IViewModel
+
+public class CategoryListViewModel : PageableViewModel, IViewModel
 {
     public List<CategoryViewModel> Items { get; set; } = new List<CategoryViewModel>();
 }

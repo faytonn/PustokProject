@@ -14,6 +14,7 @@ public class ProductViewModel : IViewModel
     public int StockQuantity { get; set; }
     public int Rating { get; set; }
     public int RewardPoint { get; set; }
+    public bool IsFeatured { get; set; }
 
     public int CategoryId { get; set; }
     public string? CategoryName { get; set; }
@@ -34,6 +35,7 @@ public class CreateProductViewModel : IViewModel
     public int StockQuantity { get; set;}
     public int Rating { get; set; }
     public int RewardPoint { get; set; }
+    public bool IsFeatured { get; set; }
 
     public List<SelectListItem>? Categories { get; set; } = new List<SelectListItem>();
     public List<int>? CategoryIds { get; set; }
@@ -56,6 +58,7 @@ public class UpdateProductViewModel : IViewModel
     public int StockQuantity { get; set; }
     public int Rating { get; set; }
     public int RewardPoint { get; set; }
+    public bool IsFeatured { get; set; }
 
     public List<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
     public List<int>? CategoryIds { get; set; }

@@ -7,7 +7,7 @@ public class SliderViewModel : IViewModel
     public string? Subtitle { get; set; }
     public string? ImageUrl { get; set; }
     public decimal OriginalPrice { get; set; }
-    public decimal DiscountPrice { get; set; }
+    public decimal? DiscountPrice { get; set; }
 }
 
 public class CreateSliderViewModel : IViewModel
@@ -16,7 +16,7 @@ public class CreateSliderViewModel : IViewModel
     public string? Subtitle { set; get; }
     public string? ImageUrl { set; get; }
     public decimal OriginalPrice { get; set; }
-    public decimal DiscountPrice { get; set; }
+    public decimal? DiscountPrice { get; set; }
 }
 
 public class UpdateSliderViewModel : IViewModel
@@ -26,7 +26,7 @@ public class UpdateSliderViewModel : IViewModel
     public string? Subtitle { get; set; }
     public string? ImageUrl { get; set; }
     public decimal OriginalPrice { get; set; }
-    public decimal DiscountPrice { get; set; }
+    public decimal? DiscountPrice { get; set; }
 }
 
 public class SliderListViewModel : IViewModel

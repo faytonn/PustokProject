@@ -15,6 +15,7 @@ public class Product : BaseEntity
     public int StockQuantity { get; set; }
     public int Rating { get; set; }
     public int RewardPoint { get; set; }
+    public bool IsFeatured { get; set; }
 
     public int CategoryId { get; set; }
     public Category? Category { get; set; }

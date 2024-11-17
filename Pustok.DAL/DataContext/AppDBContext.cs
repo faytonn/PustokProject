@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Pustok.DAL.DataContext.Configurations;
 using Pustok.DAL.DataContext.Entities;
 
 namespace Pustok.DAL.DataContext;
@@ -13,7 +14,7 @@ public class AppDBContext : IdentityDbContext<AppUser>
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-
+        builder.ApplyConfigurationsFromAssembly(typeof(AttendanceConfiguration).Assembly);
         base.OnModelCreating(builder);
     }
 

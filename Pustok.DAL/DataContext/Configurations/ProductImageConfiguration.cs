@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-using Pustok.DAL.DataContext.Entities;
 
 namespace Pustok.DAL.DataContext.Configurations;
 

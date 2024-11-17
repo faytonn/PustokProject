@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
-using Pustok.DAL.DataContext.Entities.Base;
-using Pustok.DAL.DataContext.Paging;
-using System.Linq.Expressions;
-
-namespace Pustok.DAL.DataContext.Repositories.Abstraction.Generic;
+﻿namespace Pustok.DAL.DataContext.Repositories.Abstraction.Generic;
 
 public interface IRepository<T> where T : BaseEntity
 {

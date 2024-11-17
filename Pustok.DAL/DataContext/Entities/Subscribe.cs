@@ -5,5 +5,5 @@ namespace Pustok.DAL.DataContext.Entities;
 public class Subscribe : BaseEntity
 {
     public required string Email { get; set; }
-    public bool ConfirmedEmail { get; set; } = true;
+    public bool ConfirmedEmail { get; set; } = false;
 }

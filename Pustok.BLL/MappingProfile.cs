@@ -17,6 +17,18 @@ public class MappingProfile : Profile
         CreateMap<Category, CreateCategoryViewModel>().ReverseMap();
         CreateMap<Category, UpdateCategoryViewModel>().ReverseMap();
 
+        CreateMap<Subscribe, SubscribeViewModel>().ReverseMap();
+        CreateMap<Subscribe, CreateSubscribeViewModel>().ReverseMap();
+        CreateMap<Subscribe,  UpdateSubscribeViewModel>().ReverseMap();
+
+        CreateMap<Slider, SliderViewModel>().ReverseMap();
+        CreateMap<Slider, CreateSliderViewModel>().ReverseMap();
+        CreateMap<Slider, UpdateSliderViewModel>().ReverseMap();
+
+        CreateMap<Tag, TagViewModel>().ReverseMap();
+        CreateMap<Tag, CreateTagViewModel>().ReverseMap();
+        CreateMap<Tag, UpdateTagViewModel>().ReverseMap();
+
 
     }
 }
