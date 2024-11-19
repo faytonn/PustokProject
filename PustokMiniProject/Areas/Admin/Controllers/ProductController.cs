@@ -79,13 +79,23 @@ public class ProductController : Controller
             return View(model);
         }
 
-        if (model.ImageUrls != null && model.Images.Any())
+        if (model.MainImage != null)
         {
-            model.ImageUrls = new List<string>();
-            foreach (var image in model.Images)
+            model.MainImageUrl = await _productService.UploadImageAsync(model.MainImage);
+        }
+
+        if (model.HoverImage != null)
+        {
+            model.HoverImageUrl = await _productService.UploadImageAsync(model.HoverImage);
+        }
+
+        if (model.AdditionalImages.Any())
+        {
+            model.AdditionalImageUrls = new List<string>();
+            foreach (var image in model.AdditionalImages)
             {
                 var imageUrl = await _productService.UploadImageAsync(image);
-                model.ImageUrls.Add(imageUrl);
+                model.AdditionalImageUrls.Add(imageUrl);
             }
         }
 
@@ -126,16 +136,25 @@ public class ProductController : Controller
             return View(model);
         }
 
-        if (model.Images != null && model.Images.Any())
+        if (model.MainImage != null)
         {
-            model.ImageUrls = new List<string>();
-            foreach (var image in model.Images)
-            {
-                var imageUrl = await _productService.UploadImageAsync(image);
-                model.ImageUrls.Add(imageUrl);
-            }
+            model.MainImageUrl = await _productService.UploadImageAsync(model.MainImage);
         }
 
+        if (model.HoverImage != null)
+        {
+            model.HoverImageUrl = await _productService.UploadImageAsync(model.HoverImage);
+        }
+
+        if (model.AdditionalImages.Any())
+        {
+            model.AdditionalImageUrls = new List<string>();
+            foreach (var image in model.AdditionalImages)
+            {
+                var imageUrl = await _productService.UploadImageAsync(image);
+                model.AdditionalImageUrls.Add(imageUrl);
+            }
+        }
         await _productService.UpdateProductAsync(id, model);
         TempData["SuccessMessage"] = "Product updated successfully.";
         return RedirectToAction(nameof(Index));

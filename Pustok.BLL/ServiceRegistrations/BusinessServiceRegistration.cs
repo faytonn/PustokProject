@@ -12,21 +12,25 @@ public static class BusinessServiceRegistration
 {
     public static IServiceCollection AddBusinessLogicServices(this IServiceCollection services, IConfiguration configuration)
     {
-        //services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-        //services.AddScoped<IAttendanceService, AttendanceService>();
+        services.AddScoped<IAttendanceService, AttendanceService>();
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<ISettingService, SettingService>();
-        //services.AddScoped<ISliderService, SliderService>();
-        //services.AddScoped<ISubscribeService, SubscribeService>();
-        //services.AddScoped<ITagService, TagService>();
+        services.AddScoped<ISliderService, SliderService>();
+        services.AddScoped<ISubscribeService, SubscribeService>();
+        services.AddScoped<ICloudinaryService, CloudinaryService>();
+        services.AddScoped<IBasketService, BasketService>();
+        services.AddScoped<IAccountService, AccountService>();
+        services.AddScoped<IEmailSender, EmailSenderService >();
+        services.AddScoped<IBasketService, BasketService>();
 
 
-        
-        
-        
-        
+
+
+
+
         services.AddTransient<IEmailSender, EmailSenderService>();
 
 

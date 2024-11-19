@@ -39,8 +39,12 @@ public class CreateProductViewModel : IViewModel
 
     public List<SelectListItem>? Categories { get; set; } = new List<SelectListItem>();
     public List<int>? CategoryIds { get; set; }
-    public List<IFormFile>? Images { get; set; } = new List<IFormFile>();
-    public List<string> ImageUrls { get; set; } = new List<string>();
+    public IFormFile? MainImage { get; set; } 
+    public string? MainImageUrl{ get; set; }
+    public IFormFile? HoverImage { get; set; }
+    public string? HoverImageUrl{ get; set; }  
+    public List<IFormFile> AdditionalImages { get; set; } = new List<IFormFile>();
+    public List<string> AdditionalImageUrls { get; set; } = new List<string>();
     public List<SelectListItem>? ProductTags { get; set; }
     public List<int> ProductTagIds { get; set; } = new List<int>();
 }
@@ -53,18 +57,26 @@ public class UpdateProductViewModel : IViewModel
     public string? ProductCode { get; set; }
     public string? Brand { get; set; }
     public decimal OriginalPrice { get; set; }
-    public decimal DiscountPrice { get; set; }
+    public decimal? DiscountPercentage { get; set; }
     public decimal ExTax { get; set; }
     public bool InStock { get; set; } = false;
     public int StockQuantity { get; set; }
     public int Rating { get; set; }
     public int RewardPoint { get; set; }
     public bool IsFeatured { get; set; }
+    public decimal DiscountPrice => DiscountPercentage != null
+    ? OriginalPrice * (1 - DiscountPercentage.Value / 100)
+    : OriginalPrice;
+
 
     public List<SelectListItem> Categories { get; set; } = new List<SelectListItem>();
     public List<int>? CategoryIds { get; set; }
-    public List<IFormFile> Images { get; set; } = new List<IFormFile>();
-    public List<string> ImageUrls { get; set; } = new List<string>();
+    public IFormFile? MainImage { get; set; }
+    public string? MainImageUrl { get; set; }
+    public IFormFile? HoverImage { get; set; }
+    public string? HoverImageUrl { get; set; }
+    public List<IFormFile> AdditionalImages { get; set; } = new List<IFormFile>();
+    public List<string> AdditionalImageUrls { get; set; } = new List<string>();
     public List<SelectListItem> ProductTags { get; set; } = new List<SelectListItem>();
     public List<int> ProductTagIds { get; set; } = new List<int>();
 
